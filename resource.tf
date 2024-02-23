@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 locals {
   license                               = "LicenseIncluded"
-  tier                                  = "GeneralPurpose"
+  service_tier                          = "GeneralPurpose"
   sku_name                              = "GP_Gen5"
   family                                = "Gen5"
 }
@@ -21,7 +21,7 @@ resource "azurerm_mssql_elasticpool" "sql-elastic-pool" {
 
   sku {
     name     = local.sku_name
-    tier     = local.tier
+    tier     = local.service_tier
     capacity = var.capacity
     family   = local.family
   }
