@@ -7,15 +7,15 @@ locals {
   sku_name                              = "GP_Gen5"
   family                                = "Gen5"
 }
-data "azurerm_mssql_server" "dct_mssql_server" {
+data "azurerm_mssql_server" "knoldus_mssql_server" {
   name                = var.name
   resource_group_name = var.sql-rg
 }
 resource "azurerm_mssql_elasticpool" "sql-elastic-pool" {
   name                = "${var.name}-elastic-pool"
-  resource_group_name = data.azurerm_mssql_server.dct_mssql_server.resource_group_name
-  location            = data.azurerm_mssql_server.dct_mssql_server.location
-  server_name         = data.azurerm_mssql_server.dct_mssql_server.name
+  resource_group_name = data.azurerm_mssql_server.mssql_server.resource_group_name
+  location            = data.azurerm_mssql_server.mssql_server.location
+  server_name         = data.azurerm_mssql_server.mssql_server.name
   license_type        = local.license
   max_size_gb         = var.size
 
