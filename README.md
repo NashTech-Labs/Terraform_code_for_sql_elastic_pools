@@ -4,8 +4,8 @@ This Terraform Git repo contains a module that create SQL elastic pools in Azure
 
 Before you can use this Terraform module, you will need to have the following installed:
 
-- [Terraform](https://www.terraform.io/downloads.html) - v1.0.5 or later
-- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) - v2.26.0 or later
+- [Terraform]
+- [Azure CLI]
 
 You will also need to have an Azure subscription and an existing resource group to deploy resources to.
 
